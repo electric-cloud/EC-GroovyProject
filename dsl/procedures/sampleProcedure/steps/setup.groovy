@@ -6,6 +6,7 @@ def classpath = loader.getPropertySheet(System.getenv("COMMANDER_WORKSPACE"))
 def delimeter = ':' // TODO windows
 
 ef.setProperty(propertyName: '/myJob/classpath', value: classpath.join(delimeter))
+// The next step declares command as "ec-groovy -cp classpath"
 
 
 class Loader {

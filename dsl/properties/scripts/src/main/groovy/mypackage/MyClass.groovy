@@ -1,5 +1,6 @@
 package mypackage
 
+
 class MyClass {
     def method() {
         println "Hello"
