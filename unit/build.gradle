@@ -1,0 +1,35 @@
+apply plugin: 'groovy'
+
+repositories {
+    maven { url 'https://jitpack.io' }
+    mavenCentral()
+
+    maven {
+        url 'http://artifactory/artifactory/ec'
+    }
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir '../dsl/properties/scripts/src/main/groovy'
+        }
+    }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.5.2'
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    compile 'com.electriccloud:commander-api-bindings:8.5.0-SNAPSHOT'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'org.spockframework.spock:spock-core:spock-1.1'
+}
+
+
+test {
+    testLogging {
+        outputs.upToDateWhen {false}
+        showStandardStreams = true
+    }
+}
