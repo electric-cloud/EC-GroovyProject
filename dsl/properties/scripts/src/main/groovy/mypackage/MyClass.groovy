@@ -1,8 +1,12 @@
 package mypackage
 
+import groovy.util.logging.Slf4j
 
+
+@Slf4j
 class MyClass {
     def method() {
+        log.debug "Debug"
         println "Hello"
     }
 

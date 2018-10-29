@@ -1,0 +1,30 @@
+apply plugin: 'groovy'
+
+repositories {
+    maven { url 'https://jitpack.io' }
+    mavenCentral()
+
+    maven {
+        url 'http://artifactory/artifactory/ec'
+    }
+}
+
+
+sourceSets {
+    main{
+        groovy {
+            srcDir "dsl/properties/scripts/src/main/groovy"
+        }
+    }
+}
+
+group 'com.electriccloud'
+version '1.0.0'
+
+dependencies {
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    compile gradleApi()
+    compile localGroovy()
+}
+
+
